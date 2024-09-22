@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Twitter Post Suggestion",
+  "version": "1.0",
+  "description": "Get tweet suggestions based on your interests and personality.",
+  "permissions": ["storage", "activeTab", "scripting", "cookies"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://www.x.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
